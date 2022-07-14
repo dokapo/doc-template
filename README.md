@@ -78,8 +78,8 @@ flowchart
 
 | # | 処理名 | 処理内容 | 条件 | 処理後カラム | 備考 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | INNER JOIN | 内部結合 | 商品カテゴリーが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
-| 2 | INNER JOIN | 内部結合 | 商品カテゴリーが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
+| 1 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
+| 2 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
 | 3 | UNION ALL | 縦結合 | - | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
 | 4 | GROUP BY | customer_idごとに集計 | タイムスタンプの最大値を算出<br>amountの合計を算出<br>countの合計を算出 | customer_id<br>timestamp<br>ammount<br>count | - |
 | 5 | INNER JOIN | 内部結合 | customer_id = master.customer_id | customer_id<br>customer_rank<br>timestamp<br>ammount<br>count | - |
