@@ -39,7 +39,13 @@ flowchart LR
 | 4 | 顧客マスタ | master.customer | - |
 | 5 | 〇〇販売量 | out_data.xxx_count | - |
 
-### 2.3処理一覧
+### 2.3.関数一覧
+
+| # | 関数名 | 引数 | 戻り値 | 備考 |
+| --- | --- | --- | --- | --- |
+| 1 | date_days_ago | 数値 | 現在日を基準とした[数値]日前の日にち | - |
+
+### 2.4.処理一覧
 
 | # | 処理名 | 詳細 | 処理順序 |
 | --- | --- | --- | --- |
@@ -78,8 +84,8 @@ flowchart
 
 | # | 処理名 | 処理内容 | 条件 | 処理後カラム | 備考 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
-| 2 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
+| 1 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | ```date_days_ago```を使用する |
+| 2 | INNER JOIN | 内部結合 | 商品IDが一致しているものを結合<br>抽出条件<br>ammount > 0 and <br>item.group = 'XXX’ | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | ```date_days_ago```を使用する |
 | 3 | UNION ALL | 縦結合 | - | pos_id<br>customer_id<br>timestamp<br>ammount<br>count | - |
 | 4 | GROUP BY | customer_idごとに集計 | タイムスタンプの最大値を算出<br>amountの合計を算出<br>countの合計を算出 | customer_id<br>timestamp<br>ammount<br>count | - |
 | 5 | INNER JOIN | 内部結合 | customer_id = master.customer_id | customer_id<br>customer_rank<br>timestamp<br>ammount<br>count | - |
